@@ -1,5 +1,7 @@
+
+
 buildscript {
-    extra["kotlin_version"] = "1.2.50"
+    rootProject.apply { from(rootProject.file("versions.gradle.kts")) }
     repositories {
         google()
         jcenter()
