@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(Versions.compileSdkVersion)
     defaultConfig {
         applicationId = "com.vashisthg.kotlindslexample"
-        minSdkVersion(21)
-        targetSdkVersion(28)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(Versions.minSdkVersion)
+        targetSdkVersion(Versions.targetSdkVersion)
+        versionCode = AppVersion.versionCode
+        versionName = AppVersion.versionName
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,9 +25,9 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext["kotlin_version"]}")
-    implementation("com.android.support:appcompat-v7:28.0.0-alpha3")
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("com.android.support.test:runner:1.0.2")
-    androidTestImplementation("com.android.support.test.espresso:espresso-core:3.0.2")
+    implementation(Libraries.Kotlin.stdlib)
+    implementation(Libraries.Support.appcompatV7)
+    testImplementation(Libraries.Tests.junit)
+    androidTestImplementation(Libraries.AndroidTests.testRunner)
+    androidTestImplementation(Libraries.AndroidTests.espressoCore)
 }

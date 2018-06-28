@@ -1,14 +1,11 @@
-
-
 buildscript {
-    rootProject.apply { from(rootProject.file("versions.gradle.kts")) }
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.1.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${extra["kotlin_version"]}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}")
     }
 }
 
